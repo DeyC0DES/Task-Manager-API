@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "581aecf0-62d9-4b6d-bcfa-96adfedc8068",
+		"name": "Task Manager REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37130477"
+	},
+	"item": [
+		{
+			"name": "POST Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"someEmail@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"someEmail@gmail.com\",\r\n    \"username\": \"name\",\r\n    \"password\": \"12345\"\r\n}\r\n\r\n// Admin defaul user: Admin.hkf492",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUYXNrLU1hbmFnZXItQVBJIiwic3ViIjoiYWRtaW5icmFib0BnbWFpbC5jb20iLCJleHAiOjE3MjY2MDQ4MDN9.82PVpxocmB4I7XmG8A7_r37R9MAsDgL-u0hOJrBSsrs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// get all",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/get/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"get",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUYXNrLU1hbmFnZXItQVBJIiwic3ViIjoiYWRtaW5icmFib0BnbWFpbC5jb20iLCJleHAiOjE3MjY2MDQ4MDN9.82PVpxocmB4I7XmG8A7_r37R9MAsDgL-u0hOJrBSsrs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// get with user ID",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/get/userID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"get",
+						"userID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUYXNrLU1hbmFnZXItQVBJIiwic3ViIjoiYWRtaW5icmFib0BnbWFpbC5jb20iLCJleHAiOjE3MjY2MDQ4MDN9.82PVpxocmB4I7XmG8A7_r37R9MAsDgL-u0hOJrBSsrs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"someEmail@gmail.com\",\r\n    \"username\": \"name\",\r\n    \"password\": \"12345\"\r\n}\r\n\r\n// put with user ID",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/update/userID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"update",
+						"userID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUYXNrLU1hbmFnZXItQVBJIiwic3ViIjoiYWRtaW5icmFib0BnbWFpbC5jb20iLCJleHAiOjE3MjY2MDQ4MDN9.82PVpxocmB4I7XmG8A7_r37R9MAsDgL-u0hOJrBSsrs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// delete with user ID",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/delete/userID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"delete",
+						"userID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE TASK",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUYXNrLU1hbmFnZXItQVBJIiwic3ViIjoiZGF2aXppbmhvZG9ybWluaG9jbzA5NzZAZ21haWwuY29tIiwiZXhwIjoxNzI2NjAxNjc4fQ.PMCQ-w_3JvrBIsLQ4sjIMHNkIESBBVIwLJ06QMtZT3o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskname\": \"\",\r\n    \"stats\": \"TODO\",\r\n    \"expireAt\": \"2024-09-18\"\r\n}\r\n\r\n// task types: TODO, DOING, FINISHED",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/task/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"task",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUYXNrLU1hbmFnZXItQVBJIiwic3ViIjoiZGF2aXppbmhvZG9ybWluaG9jbzA5NzZAZ21haWwuY29tIiwiZXhwIjoxNzI2NjAxNjc4fQ.PMCQ-w_3JvrBIsLQ4sjIMHNkIESBBVIwLJ06QMtZT3o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// get task by name",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/task/get/taskname",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"task",
+						"get",
+						"taskname"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUYXNrLU1hbmFnZXItQVBJIiwic3ViIjoiZGF2aXppbmhvZG9ybWluaG9jbzA5NzZAZ21haWwuY29tIiwiZXhwIjoxNzI2NjAxNjc4fQ.PMCQ-w_3JvrBIsLQ4sjIMHNkIESBBVIwLJ06QMtZT3o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// get all",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/task/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"task",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUYXNrLU1hbmFnZXItQVBJIiwic3ViIjoiZGF2aXppbmhvZG9ybWluaG9jbzA5NzZAZ21haWwuY29tIiwiZXhwIjoxNzI2NjAyMTIyfQ.3KVWlEfnQWFCnhNuYMjZ00desCCd28kf4FJeAmW3AV4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskname\": \"task\",\r\n    \"stats\": \"DOING\"\r\n}\r\n\r\n// update task by name\r\n// task types: TODO, DOING, FINISHED",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/task/update/taskname",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"task",
+						"update",
+						"taskname"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUYXNrLU1hbmFnZXItQVBJIiwic3ViIjoiZGF2aXppbmhvZG9ybWluaG9jbzA5NzZAZ21haWwuY29tIiwiZXhwIjoxNzI2NjAwMTEzfQ.d30B673wY-qpYHXItHh5zd4eIEOz89G-LG17s_MkPkc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// delete task by name",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/task/delete/taskname",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"task",
+						"delete",
+						"taskname"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
