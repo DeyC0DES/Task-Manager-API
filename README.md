@@ -1,9 +1,5 @@
 # Task-Manager-API
 
-Uma API com sistema de segurança e armazenamento em banco de dados (A collection do postman tá no arquivo "Post Man IMPORT").
-
-#
-
 Mais uma Api que eu fiz por fins de prática, não tenho muito o que dizer sobre. As DP que eu usei foram:
 ● Spring WEB
 
